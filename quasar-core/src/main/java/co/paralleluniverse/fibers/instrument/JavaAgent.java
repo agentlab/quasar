@@ -150,7 +150,7 @@ public class JavaAgent {
         });
 
         Retransform.instrumentation = instrumentation;
-        Retransform.db = instrumentor.getMethodDatabase();
+        Retransform.db = instrumentor.getMethodDatabase(cl);
         Retransform.classLoaders = classLoaders;
 
         instrumentation.addTransformer(new Transformer(instrumentor), true);
@@ -184,7 +184,7 @@ public class JavaAgent {
             classLoaders.add(new WeakReference<>(loader));
 
             try {
-                final byte[] transformed = instrumentor.instrumentClass(className, classfileBuffer);
+                final byte[] transformed = instrumentor.instrumentClass(loader, className, classfileBuffer);
 
                 if (transformed != null)
                     Retransform.afterTransform(className, classBeingRedefined, transformed);
