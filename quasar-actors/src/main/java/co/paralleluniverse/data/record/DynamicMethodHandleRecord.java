@@ -46,7 +46,7 @@ class DynamicMethodHandleRecord<R> extends DynamicRecord<R> {
         }
     }
 
-    private static MethodHandle fixMethodHandleType(Field field, MethodHandle mh) throws IllegalAccessException {
+    private static MethodHandle fixMethodHandleType(Field<?, ?> field, MethodHandle mh) throws IllegalAccessException {
         if (mh == null)
             return null;
 
@@ -1072,7 +1072,7 @@ class DynamicMethodHandleRecord<R> extends DynamicRecord<R> {
             final RecordType.Entry entry = entry(field);
             if (entry.indexed) {
                 for (int i = 0; i < field.length; i++)
-                    setter(field, entry).invokeExact(obj, i, source.get(sourceField, i));
+                    setter(field, entry).invokeExact(obj, i, (V)source.get(sourceField, i));
             } else
                 source.get(sourceField, ((V[]) entry.getterHandle.invokeExact(obj)), 0);
         } catch (RuntimeException e) {
