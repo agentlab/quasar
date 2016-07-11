@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>co.paralleluniverse.quasar</groupId>
+	<artifactId>co.paralleluniverse.quasar.releng</artifactId>
+	<version>0.7.6-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	
+	<parent>
+		<groupId>org.eclipseorbit</groupId>
+		<artifactId>org.eclipseorbit.parent</artifactId>
+		<relativePath>../../../../orbit-parent/org.eclipseorbit.parent/pom.xml</relativePath>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	
+	<modules>
+		<module>../co.paralleluniverse.quasar.target</module>
+		
+		<module>../co.paralleluniverse.quasar.libs</module>
+		<module>../../plugins/co.paralleluniverse.quasar.core</module>
+		<module>../../plugins/co.paralleluniverse.quasar.actors</module>
+		
+		<module>../../tests/co.paralleluniverse.quasar.core.tests</module>
+		<module>../../tests/co.paralleluniverse.quasar.actors.tests</module>
+		
+<!--		<module>../../features/co.paralleluniverse.quasar.feature</module>
+		
+		<module>../co.paralleluniverse.quasar.repository</module>-->
+	</modules>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<configuration>
+					<target>
+						<artifact>
+							<groupId>co.paralleluniverse.quasar</groupId>
+							<artifactId>co.paralleluniverse.quasar.target</artifactId>
+							<version>0.7.6-SNAPSHOT</version>
+						</artifact>
+					</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-surefire-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

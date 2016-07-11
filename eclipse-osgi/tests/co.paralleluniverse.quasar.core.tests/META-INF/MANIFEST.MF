@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Quasar Core Tests
+Bundle-SymbolicName: co.paralleluniverse.quasar.core.tests
+Bundle-Version: 0.7.6.qualifier
+Bundle-Vendor: EclipseOrbit
+Fragment-Host: co.paralleluniverse.quasar.core;bundle-version="0.7.6.qualifier"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: org.osgi.framework;version="1.3.0",
+ org.slf4j;version="1.7.2"
+Require-Bundle: org.junit;bundle-version="4.12.0",
+ org.hamcrest.core;bundle-version="1.3.0",
+ org.mockito;bundle-version="1.9.5"
+Export-Package: co.paralleluniverse.common.reflection,
+ co.paralleluniverse.common.test,
+ co.paralleluniverse.common.util,
+ co.paralleluniverse.concurrent.util,
+ co.paralleluniverse.fibers,
+ co.paralleluniverse.fibers.futures,
+ co.paralleluniverse.fibers.instrument,
+ co.paralleluniverse.fibers.io,
+ co.paralleluniverse.fibers.lambdas,
+ co.paralleluniverse.strands.channels,
+ co.paralleluniverse.strands.channels.transfer,
+ co.paralleluniverse.strands.dataflow,
+ co.paralleluniverse.strands.queues

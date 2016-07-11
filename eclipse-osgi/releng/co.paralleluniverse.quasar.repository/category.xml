@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description name="Parallel Universe Quasar Update Site" url="">
+      Parallel Universe Quasar Update Site
+   </description>
+	  
+   <feature id="co.paralleluniverse.quasar.feature"><category name="co.paralleluniverse.quasar"/></feature>
+   <feature id="co.paralleluniverse.quasar.feature.source"><category name="co.paralleluniverse.quasar"/></feature>
+</site>

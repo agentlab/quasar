@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Quasar Agents Tests
+Bundle-SymbolicName: co.paralleluniverse.quasar.actors.tests
+Bundle-Version: 0.7.6.qualifier
+Bundle-Vendor: EclipseOrbit
+Fragment-Host: co.paralleluniverse.quasar.actors;bundle-version="0.7.6.qualifier"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: org.osgi.framework;version="1.3.0",
+ org.slf4j;version="1.7.2"
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.junit;bundle-version="4.12.0",
+ org.hamcrest.core;bundle-version="1.3.0",
+ org.mockito;bundle-version="1.9.5"
+Export-Package: co.paralleluniverse.actors,
+ co.paralleluniverse.actors.behaviors,
+ co.paralleluniverse.data.record
