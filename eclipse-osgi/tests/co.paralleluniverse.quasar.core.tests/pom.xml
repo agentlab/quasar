@@ -55,7 +55,7 @@
 							<outputDirectory>${basedir}/src-test</outputDirectory>
 							<resources>
 								<resource>
-									<directory>../../quasar-core/src/test/java</directory>
+									<directory>../../../quasar-core/src/test/java</directory>
 									<filtering>true</filtering>
 								</resource>
 							</resources>
@@ -71,7 +71,7 @@
 							<outputDirectory>${basedir}/src-jdk8test</outputDirectory>
 							<resources>
 								<resource>
-									<directory>../../quasar-core/src/jdk8test/java</directory>
+									<directory>../../../quasar-core/src/jdk8test/java</directory>
 									<filtering>true</filtering>
 								</resource>
 							</resources>
@@ -87,7 +87,7 @@
 							<outputDirectory>${basedir}/resources</outputDirectory>
 							<resources>
 								<resource>
-									<directory>../../quasar-core/src/test/resources</directory>
+									<directory>../../../quasar-core/src/test/resources</directory>
 									<filtering>true</filtering>
 								</resource>
 							</resources>

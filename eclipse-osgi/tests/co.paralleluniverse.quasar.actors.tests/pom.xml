@@ -41,7 +41,7 @@
 							<outputDirectory>${basedir}/src-test</outputDirectory>
 							<resources>
 								<resource>
-									<directory>../../quasar-actors/src/test/java</directory>
+									<directory>../../../quasar-actors/src/test/java</directory>
 									<filtering>true</filtering>
 								</resource>
 							</resources>

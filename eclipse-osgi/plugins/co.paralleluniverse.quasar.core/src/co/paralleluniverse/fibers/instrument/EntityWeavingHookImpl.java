@@ -30,8 +30,13 @@ public class EntityWeavingHookImpl implements WeavingHook, Instrumentation {
 		byte[] result = null;
 		
 		try {
-			cn = wc.getClassName(); 
-			System.out.println("Weaving class " + cn);
+			cn = wc.getClassName();
+			//if(cn.contains("org.eclipse.equinox")) {
+			//	System.out.println("-not weaving class " + cn);
+			//	return;
+			//}
+			
+			//System.out.println("Weaving class " + cn);
 			cl = wc.getBundleWiring().getClassLoader();
 			result = wc.getBytes();
 			
