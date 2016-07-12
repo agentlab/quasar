@@ -6,6 +6,7 @@ import java.lang.instrument.IllegalClassFormatException;
 import java.lang.instrument.Instrumentation;
 import java.lang.instrument.UnmodifiableClassException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.jar.JarFile;
 
@@ -20,23 +21,25 @@ public class EntityWeavingHookImpl implements WeavingHook, Instrumentation {
 	protected List<ClassFileTransformer> transformers = new ArrayList<>();
 	
 	public EntityWeavingHookImpl() {
-		JavaAgent.premain(null, this);
+		JavaAgent.premain("", this);//vdcb
 	}
 
 	@Override
 	public void weave(WovenClass wc) {
 		String cn;
+		String bsn;
 		ClassLoader cl;
 		byte[] result = null;
+		boolean isTransformed = false;
 		
 		try {
 			cn = wc.getClassName();
-			//if(cn.contains("org.eclipse.equinox")) {
-			//	System.out.println("-not weaving class " + cn);
-			//	return;
-			//}
+			bsn = wc.getBundleWiring().getBundle().getSymbolicName();
+			if(cn.startsWith("org.eclipse.equinox") || cn.startsWith("org.osgi") || cn.startsWith("org.junit") || cn.startsWith("org.eclipse.jdt") || cn.startsWith("org.apache.felix")) {
+				//System.out.println("-not weaving class " + cn);
+				return;
+			}
 			
-			//System.out.println("Weaving class " + cn);
 			cl = wc.getBundleWiring().getClassLoader();
 			result = wc.getBytes();
 			
@@ -44,7 +47,15 @@ public class EntityWeavingHookImpl implements WeavingHook, Instrumentation {
 	            try {
 	                byte[] transformed = transformer.transform(cl, cn, null, null, result);
 	                if (transformed != null) {
-	                    result = transformed;
+	                	if(Arrays.equals(result, transformed)) {
+	                		//System.out.println("-fake weaving class " + cn);
+	                	} else {
+		                    result = transformed;
+		                    isTransformed = true;
+		                    //System.out.println("weaving class " + cn);
+	                	}
+	                } else {
+	                	//System.out.println("-not weaving class  " + cn);
 	                }
 	            } catch (IllegalClassFormatException e) {
 	                e.printStackTrace();
@@ -54,7 +65,7 @@ public class EntityWeavingHookImpl implements WeavingHook, Instrumentation {
             e.printStackTrace();
         }
 		
-        if (result != null) {
+        if (isTransformed == true && result != null) {
             wc.setBytes(result);
         }
 	}
@@ -76,20 +87,22 @@ public class EntityWeavingHookImpl implements WeavingHook, Instrumentation {
 
 	@Override
 	public boolean isRetransformClassesSupported() {
-		return false;
+		return true;
 	}
 
 	@Override
 	public void retransformClasses(Class<?>... classes) throws UnmodifiableClassException {
+		System.out.println("retransformClasses");
 	}
 
 	@Override
 	public boolean isRedefineClassesSupported() {
-		return false;
+		return true;
 	}
 
 	@Override
 	public void redefineClasses(ClassDefinition... definitions) throws ClassNotFoundException, UnmodifiableClassException {
+		System.out.println("redefineClasses");
 	}
 
 	@Override
@@ -114,10 +127,12 @@ public class EntityWeavingHookImpl implements WeavingHook, Instrumentation {
 
 	@Override
 	public void appendToBootstrapClassLoaderSearch(JarFile jarfile) {
+		System.out.println("appendToBootstrapClassLoaderSearch");
 	}
 
 	@Override
 	public void appendToSystemClassLoaderSearch(JarFile jarfile) {
+		System.out.println("appendToSystemClassLoaderSearch");
 	}
 
 	@Override
@@ -127,5 +142,6 @@ public class EntityWeavingHookImpl implements WeavingHook, Instrumentation {
 
 	@Override
 	public void setNativeMethodPrefix(ClassFileTransformer transformer, String prefix) {
+		System.out.println("setNativeMethodPrefix");
 	}
 }

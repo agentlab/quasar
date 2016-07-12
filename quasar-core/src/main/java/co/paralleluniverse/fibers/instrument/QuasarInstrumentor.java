@@ -73,7 +73,7 @@ public final class QuasarInstrumentor {
     public boolean shouldInstrument(String className) {
         if (className != null) {
             className = className.replace('.', '/');
-            if (className.startsWith("co/paralleluniverse/fibers/instrument/") && !Debug.isUnitTest())
+            if (className.startsWith("co/paralleluniverse/fibers/instrument/") && !className.contains("Test") && !Debug.isUnitTest())
                 return false;
             if (className.equals(Classes.FIBER_CLASS_NAME) || className.startsWith(Classes.FIBER_CLASS_NAME + '$'))
                 return false;
