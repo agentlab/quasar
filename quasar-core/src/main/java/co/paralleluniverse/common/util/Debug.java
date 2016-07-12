@@ -37,7 +37,7 @@ public class Debug {
     private static final FlightRecorder flightRecorder = (debugMode && SystemProperties.isEmptyOrTrue("co.paralleluniverse.globalFlightRecorder") ? new FlightRecorder("PUNIVERSE-FLIGHT-RECORDER") : null);
     private static boolean recordStackTraces = false;
     private static final boolean assertionsEnabled;
-    private static final boolean unitTest;
+    private static boolean unitTest;
     private static final boolean ci;
     private static final boolean debugger;
     private static final AtomicBoolean requestShutdown = new AtomicBoolean();
@@ -97,6 +97,10 @@ public class Debug {
 
     public static boolean isUnitTest() {
         return unitTest;
+    }
+	
+	public static void setUnitTest(boolean b) {
+        unitTest = b;
     }
 
     public static void setRecordStackTraces(boolean recordStackTraces) {

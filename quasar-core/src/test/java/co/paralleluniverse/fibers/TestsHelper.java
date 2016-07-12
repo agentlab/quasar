@@ -13,11 +13,17 @@
  */
 package co.paralleluniverse.fibers;
 
+import co.paralleluniverse.common.util.Debug;
+
 /**
  *
  * @author pron
  */
 public class TestsHelper {
+	static {
+		Debug.setUnitTest(true);
+	}
+	
     public static boolean exec(Fiber f) {
         f.resetState();
         return f.exec();
