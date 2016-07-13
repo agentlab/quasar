@@ -25,9 +25,8 @@
 		<module>../../tests/co.paralleluniverse.quasar.core.tests</module>
 		<module>../../tests/co.paralleluniverse.quasar.actors.tests</module>
 		
-<!--		<module>../../features/co.paralleluniverse.quasar.feature</module>
-		
-		<module>../co.paralleluniverse.quasar.repository</module>-->
+		<module>../../features/co.paralleluniverse.quasar.feature</module>
+		<module>../co.paralleluniverse.quasar.repository</module>
 	</modules>
 	
 	<build>

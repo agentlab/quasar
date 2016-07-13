@@ -22,7 +22,10 @@
    </url>
 
    <requires>
-      <import plugin="org.hamcrest.core" version="1.3.0" match="greaterOrEqual"/>
+      <import plugin="co.paralleluniverse.quasar.core" version="0.7.6" match="greaterOrEqual"/>
+      <import plugin="co.paralleluniverse.quasar.libs" version="0.7.6" match="greaterOrEqual"/>
+      <import plugin="org.slf4j.api"/>
+      <import plugin="org.junit"/>
    </requires>
 
    <plugin

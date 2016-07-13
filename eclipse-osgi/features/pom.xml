@@ -19,6 +19,21 @@
 			<plugin>
 				<groupId>org.eclipse.tycho.extras</groupId>
 				<artifactId>tycho-source-feature-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<id>source-feature</id>
+						<goals>
+							<goal>source-feature</goal>
+						</goals>
+						<configuration>
+							<excludes>
+								<!-- ID of the non-source bundle(s) to exclude from the generated source feature -->
+								<plugin id="co.paralleluniverse.quasar.libs"/>
+							</excludes>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
