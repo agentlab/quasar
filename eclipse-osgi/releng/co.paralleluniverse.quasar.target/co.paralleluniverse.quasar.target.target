@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde version="3.8"?>
-<target name="Generated from Quasar" sequenceNumber="12">
+<target name="Generated from Quasar" sequenceNumber="13">
   <locations>
     <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
       <unit id="javax.el" version="0.0.0"/>
@@ -51,26 +51,6 @@
       <unit id="org.eclipse.e4.ui.workbench.renderers.swt" version="0.0.0"/>
       <unit id="org.eclipse.e4.ui.workbench.swt" version="0.0.0"/>
       <unit id="org.eclipse.e4.ui.workbench3" version="0.0.0"/>
-      <unit id="org.eclipse.ecf" version="0.0.0"/>
-      <unit id="org.eclipse.ecf.core.feature.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.ecf.core.feature.feature.jar" version="0.0.0"/>
-      <unit id="org.eclipse.ecf.core.ssl.feature.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.ecf.core.ssl.feature.feature.jar" version="0.0.0"/>
-      <unit id="org.eclipse.ecf.filetransfer" version="0.0.0"/>
-      <unit id="org.eclipse.ecf.filetransfer.feature.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.ecf.filetransfer.feature.feature.jar" version="0.0.0"/>
-      <unit id="org.eclipse.ecf.filetransfer.httpclient4.feature.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.ecf.filetransfer.httpclient4.feature.feature.jar" version="0.0.0"/>
-      <unit id="org.eclipse.ecf.filetransfer.httpclient4.ssl.feature.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.ecf.filetransfer.httpclient4.ssl.feature.feature.jar" version="0.0.0"/>
-      <unit id="org.eclipse.ecf.filetransfer.ssl.feature.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.ecf.filetransfer.ssl.feature.feature.jar" version="0.0.0"/>
-      <unit id="org.eclipse.ecf.identity" version="0.0.0"/>
-      <unit id="org.eclipse.ecf.provider.filetransfer" version="0.0.0"/>
-      <unit id="org.eclipse.ecf.provider.filetransfer.httpclient4" version="0.0.0"/>
-      <unit id="org.eclipse.ecf.provider.filetransfer.httpclient4.ssl" version="0.0.0"/>
-      <unit id="org.eclipse.ecf.provider.filetransfer.ssl" version="0.0.0"/>
-      <unit id="org.eclipse.ecf.ssl" version="0.0.0"/>
       <unit id="org.eclipse.emf.common" version="0.0.0"/>
       <unit id="org.eclipse.emf.ecore" version="0.0.0"/>
       <unit id="org.eclipse.emf.ecore.change" version="0.0.0"/>
@@ -187,6 +167,26 @@
       <unit id="ch.qos.logback.core" version="0.0.0"/>
       <unit id="ch.qos.logback.slf4j" version="0.0.0"/>
       <unit id="com.ibm.icu.base" version="0.0.0"/>
+      <unit id="org.eclipse.ecf" version="0.0.0"/>
+      <unit id="org.eclipse.ecf.core.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.ecf.core.feature.feature.jar" version="0.0.0"/>
+      <unit id="org.eclipse.ecf.core.ssl.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.ecf.core.ssl.feature.feature.jar" version="0.0.0"/>
+      <unit id="org.eclipse.ecf.filetransfer" version="0.0.0"/>
+      <unit id="org.eclipse.ecf.filetransfer.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.ecf.filetransfer.feature.feature.jar" version="0.0.0"/>
+      <unit id="org.eclipse.ecf.filetransfer.httpclient4.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.ecf.filetransfer.httpclient4.feature.feature.jar" version="0.0.0"/>
+      <unit id="org.eclipse.ecf.filetransfer.httpclient4.ssl.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.ecf.filetransfer.httpclient4.ssl.feature.feature.jar" version="0.0.0"/>
+      <unit id="org.eclipse.ecf.filetransfer.ssl.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.ecf.filetransfer.ssl.feature.feature.jar" version="0.0.0"/>
+      <unit id="org.eclipse.ecf.identity" version="0.0.0"/>
+      <unit id="org.eclipse.ecf.provider.filetransfer" version="0.0.0"/>
+      <unit id="org.eclipse.ecf.provider.filetransfer.httpclient4" version="0.0.0"/>
+      <unit id="org.eclipse.ecf.provider.filetransfer.httpclient4.ssl" version="0.0.0"/>
+      <unit id="org.eclipse.ecf.provider.filetransfer.ssl" version="0.0.0"/>
+      <unit id="org.eclipse.ecf.ssl" version="0.0.0"/>
       <unit id="org.slf4j.jcl" version="0.0.0"/>
       <repository location="http://download.eclipse.org/releases/neon/"/>
     </location>
